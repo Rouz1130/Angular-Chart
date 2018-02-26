@@ -1,3 +1,4 @@
+<!-- The content below is a placeholder and can be replaced. -->
 <mat-form-field>
   <mat-select [(value)]="survey.layer">
     <mat-option value="Layer1">Layer1</mat-option>
@@ -21,3 +22,16 @@
   <mat-radio-button value="1">1</mat-radio-button>
 </mat-radio-group>
 <button mat-raised-button color="primary" (click)="saveEntry()">Save Entry</button>
+
+<ngx-charts-pie-chart *ngIf ="chartdata"
+  [view]="view"
+  [scheme]="colorSchema"
+  [results]="layerData"
+  [legend]="showLegend"
+  [explodeSlices]="explodeSlices"
+  [labels]="showLabels"
+  [doughnut]="doughnut"
+  (select)="onSelect($event)">
+</ngx-charts-pie-chart>
+
+
