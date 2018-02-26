@@ -28,17 +28,21 @@ export class AppComponent implements OnInit {
   colorScheme = {
     domain: ['#FFA500','#FF0000','#660000', '#000000']
   };
+
   showLabels = true;
   explodeSlices = false;
   doughnut = false;
 
 
+
   constructor(private vote: VoteService) {} 
+
 
   saveEntry() {
     this.vote.saveEntry(this.survey);
   }
 
+// Pulling data from firestore via service. 
   ngOnInit() {
     this.vote.getAllEntries().subscribe((results) =>  {
       this.chartdata = true;
@@ -46,10 +50,12 @@ export class AppComponent implements OnInit {
     })
   }
 
+
   onSelect(event) {
     console.log(event);
   }
 
+// Function to get Data
   processData(entries) {
     this.layerCount = [];
     this.layerData = [];
