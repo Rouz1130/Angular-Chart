@@ -11,4 +11,8 @@ export class VoteService {
     this.afs.collection('surveys').valueChanges();
   }
 
+  getAllEntries(): Observable<any> {
+    return this.afs.collection('surveys').valueChanges();
+  }
+
 }

@@ -25,12 +25,12 @@
 
 <ngx-charts-pie-chart *ngIf ="chartdata"
   [view]="view"
-  [scheme]="colorSchema"
+  [scheme]="colorScheme"
   [results]="layerData"
   [legend]="showLegend"
   [explodeSlices]="explodeSlices"
   [labels]="showLabels"
-  [doughnut]="doughnut"
+  [doughnut]=" doughnut"
   (select)="onSelect($event)">
 </ngx-charts-pie-chart>
 
